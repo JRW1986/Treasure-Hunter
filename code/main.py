@@ -15,8 +15,8 @@ class Game:
         self.coins = 0
         
         # audio
-        self.level_bg_music = pygame.mixer.Sound('audio/level_music.wav')
-        self.overworld_bg_music = pygame.mixer.Sound('audio/overworld_music.wav')
+        self.level_bg_music = pygame.mixer.Sound('../audio/level_music.wav')
+        self.overworld_bg_music = pygame.mixer.Sound('../audio/overworld_music.wav')
 
         # overworld creation
         self.start = self.menu()
@@ -28,7 +28,7 @@ class Game:
         self.ui = UI(screen)
 
     def menu(self):
-         start_menu = pygame.image.load('graphics/decoration/start.png').convert_alpha()
+         start_menu = pygame.image.load('../graphics/decoration/start.png').convert_alpha()
          start_menu = pygame.transform.scale(start_menu,(screen_width,screen_height))
          screen.blit(start_menu,(0,0))
          if pygame.key.get_pressed()[pygame.K_RETURN]:
@@ -36,7 +36,7 @@ class Game:
                 self.create_overworld(0,0)
               
     def game_over(self):
-         game_over_menu = pygame.image.load('graphics/decoration/game-over.png').convert_alpha()
+         game_over_menu = pygame.image.load('../graphics/decoration/game-over.png').convert_alpha()
          game_over_menu = pygame.transform.scale(game_over_menu,(screen_width,screen_height))
          screen.blit(game_over_menu,(0,0))
          if pygame.key.get_pressed()[pygame.K_RETURN]:
